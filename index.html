@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Interview Coach</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Interview Coach</h1>
+    
+    <div class="interview-section">
+      <div class="question-display">
+        <h2>Current Question</h2>
+        <p id="questionDisplay">Loading question...</p>
+        <button id="newQuestionBtn" class="question-btn">Get New Question</button>
+      </div>
+      
+      <div class="video-container">
+        <video id="preview" autoplay muted></video>
+        <video id="recorded" controls></video>
+      </div>
+      
+      <div class="controls">
+        <button id="startBtn">Start Recording</button>
+        <button id="stopBtn" disabled>Stop Recording</button>
+        <button id="analyzeBtn" disabled>Analyze Interview</button>
+      </div>
+    </div>
+
+    <div class="feedback-section" id="feedbackSection" style="display: none;">
+      <h2>Interview Feedback</h2>
+      <div class="feedback-grid">
+        <div class="feedback-card">
+          <h3>Tone</h3>
+          <p id="toneFeedback"></p>
+        </div>
+        <div class="feedback-card">
+          <h3>Clarity</h3>
+          <p id="clarityFeedback"></p>
+        </div>
+        <div class="feedback-card">
+          <h3>Content</h3>
+          <p id="contentFeedback"></p>
+        </div>
+      </div>
+      
+      <div class="suggestions">
+        <h3>Improvement Suggestions</h3>
+        <ul id="suggestionsList"></ul>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <h2>Interview History</h2>
+      <button id="clearHistoryBtn" class="clear-history-btn">Clear History</button>
+      <div id="historyList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
