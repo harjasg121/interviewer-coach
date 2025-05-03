@@ -29,7 +29,7 @@ async function initCamera() {
         mediaRecorder.onstop = () => {
             const blob = new Blob(recordedChunks, { type: 'video/webm' });
             recordedVideo.src = URL.createObjectURL(blob);
-            recordedVideo.style.display = 'block';
+            recordedVideo.classList.remove('hidden');
             analyzeBtn.disabled = false;
         };
 
@@ -69,8 +69,8 @@ startBtn.addEventListener('click', () => {
     startBtn.disabled = true;
     stopBtn.disabled = false;
     analyzeBtn.disabled = true;
-    recordedVideo.style.display = 'none';
-    feedbackSection.style.display = 'none';
+    recordedVideo.classList.add('hidden');
+    feedbackSection.classList.add('hidden');
 });
 
 // Stop recording
@@ -135,7 +135,7 @@ function displayFeedback(feedback) {
         suggestionsList.appendChild(li);
     });
 
-    feedbackSection.style.display = 'block';
+    feedbackSection.classList.remove('hidden');
 }
 
 // Load interview history
