@@ -5,15 +5,106 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Interview Coach - Home</title>
   <link rel="stylesheet" href="index.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      height: 100vh;
+      background-color: #000;
+    }
+
+    .background-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content-overlay {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .site-title {
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .home-container {
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .get-started-btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(45deg, #00ff9d, #00b8ff);
+      color: #000;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 20px rgba(0, 255, 157, 0.5);
+    }
+
+    .get-started-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 157, 0.8);
+      background: linear-gradient(45deg, #00ff9d, #00b8ff);
+      color: #000;
+    }
+  </style>
 </head>
 <body>
+  <img src="public/images/gif.gif" class="background-gif" alt="Futuristic background">
   <div class="navbar">
     <span class="site-title">AI Interview Coach</span>
   </div>
-  <div class="home-container">
-    <h1>Welcome to AI Interview Coach</h1>
-    <p>Practice your interview skills with AI-powered feedback and improve your confidence for your next big opportunity.</p>
-    <a href="home.html" class="get-started-btn">Get Started</a>
+  <div class="content-overlay">
+    <div class="home-container">
+      <h1>Welcome to AI Interview Coach</h1>
+      <p>Practice your interview skills with AI-powered feedback and improve your confidence for your next big opportunity.</p>
+      <a href="home.html" class="get-started-btn">Get Started</a>
+    </div>
   </div>
 </body>
 </html> 
