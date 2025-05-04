@@ -1,3 +1,13 @@
+@font-face {
+  font-family: terminal;
+  src: url(./fonts/TerminalF4.ttf);
+}
+
+@font-face {
+  font-family: mont;
+  src: url(./fonts/Mont.otf);
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -14,6 +24,7 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   color: #4f46e5;
+  font-family: terminal;
 }
 
 .home-container {
@@ -25,15 +36,17 @@ body {
   text-align: center;
 }
 .home-container h1 {
-  font-size: 2.5rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   color: #1e293b;
+  font-family: terminal;
 }
 .home-container p {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #475569;
   margin-bottom: 2rem;
   max-width: 500px;
+  font-family: mont;
 }
 .get-started-btn {
   display: inline-block;
@@ -46,6 +59,7 @@ body {
   text-decoration: none;
   box-shadow: 0 2px 8px rgba(79,70,229,0.08);
   transition: background 0.2s, box-shadow 0.2s;
+  font-family: terminal;
 }
 .get-started-btn:hover {
   background: #3730a3;
