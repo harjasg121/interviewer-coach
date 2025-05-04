@@ -35,14 +35,14 @@
     }
   </style>
 </head>
-<body class="font-sans bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen m-0 p-8 text-gray-800">
-  <div class="max-w-5xl mx-auto">
-    <h1 class="text-4xl font-bold text-center mb-8 text-gray-800">Hire Me Bro</h1>
+<body class="font-sans bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen m-0 p-4 md:p-6 text-gray-800">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800">Hire Me Bro</h1>
     
-    <div class="bg-white rounded-xl shadow-lg p-6 mb-8 transform transition-all hover:shadow-xl">
-      <div class="mb-6">
-        <h2 class="text-2xl font-semibold mb-3 text-gray-800">Current Question</h2>
-        <p id="questionDisplay" class="text-lg mb-4 text-gray-600">Loading question...</p>
+    <div class="bg-white rounded-xl shadow-lg p-4 md:p-6 mb-6 transform transition-all hover:shadow-xl">
+      <div class="mb-4">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-gray-800">Current Question</h2>
+        <p id="questionDisplay" class="text-base md:text-lg mb-3 text-gray-600">Loading question...</p>
         <button id="newQuestionBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105">
           Get New Question
         </button>
@@ -66,14 +66,14 @@
           </svg>
           Start Recording
         </button>
-        <button id="stopBtn" disabled class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 flex items-center gap-2 opacity-50 cursor-not-allowed">
+        <button id="stopBtn" disabled class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 flex items-center gap-2">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
           </svg>
           Stop Recording
         </button>
-        <button id="analyzeBtn" disabled class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 flex items-center gap-2 opacity-50 cursor-not-allowed">
+        <button id="analyzeBtn" disabled class="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 flex items-center gap-2">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
@@ -85,23 +85,23 @@
     <div class="feedback-section hidden bg-white rounded-xl shadow-lg p-6 mb-8 transform transition-all hover:shadow-xl" id="feedbackSection">
       <h2 class="text-2xl font-semibold mb-6 text-gray-800">Interview Feedback</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-500 transition-colors">
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Tone</h3>
-          <p id="toneFeedback" class="text-gray-600"></p>
+          <p id="toneFeedback" class="text-gray-600 break-words"></p>
         </div>
-        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-500 transition-colors">
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Clarity</h3>
-          <p id="clarityFeedback" class="text-gray-600"></p>
+          <p id="clarityFeedback" class="text-gray-600 break-words"></p>
         </div>
-        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200 hover:border-blue-500 transition-colors">
+        <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
           <h3 class="text-lg font-semibold mb-2 text-gray-800">Content</h3>
-          <p id="contentFeedback" class="text-gray-600"></p>
+          <p id="contentFeedback" class="text-gray-600 break-words"></p>
         </div>
       </div>
       
       <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
         <h3 class="text-lg font-semibold mb-3 text-gray-800">Improvement Suggestions</h3>
-        <ul id="suggestionsList" class="list-disc pl-5 space-y-2 text-gray-600"></ul>
+        <ul id="suggestionsList" class="list-disc pl-5 space-y-2 text-gray-600 break-words whitespace-normal"></ul>
       </div>
     </div>
 

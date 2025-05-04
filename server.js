@@ -55,8 +55,31 @@ const interviewQuestions = [
     "How do you handle stress and pressure?",
     "What are your salary expectations?",
     "Why should we hire you?",
-    "Do you have any questions for us?"
+    "Do you have any questions for us?",
+    "How do you stay current with industry trends and developments?",
+    "Describe a time when you had to work with a difficult team member. How did you handle it?",
+    "What motivates you in your work?",
+    "How do you prioritize your work when you have multiple deadlines?",
+    "Tell me about a time you failed and what you learned from it.",
+    "What is your preferred work environment and why?",
+    "How do you handle constructive criticism?",
+    "Describe your ideal manager and work environment.",
+    "What are your career goals and how does this position align with them?",
+    "How do you measure success in your work?",
+    "Tell me about a time you had to make a difficult decision at work.",
+    "How do you handle conflicts in the workplace?",
+    "What skills do you think are most important for this role?",
+    "How do you approach learning new technologies or skills?",
+    "Describe a time when you had to adapt to a major change at work.",
+    "What do you consider your biggest professional accomplishment?",
+    "How do you ensure quality in your work?",
+    "Tell me about a time you had to work under tight deadlines.",
+    "What do you think sets you apart from other candidates?",
+    "How do you handle work-life balance?"
 ];
+
+// Track last question to prevent repeats
+let lastQuestion = null;
 
 // MongoDB Connection
 if (!process.env.MONGODB_URI) {
@@ -85,7 +108,12 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 // API Endpoints
 app.get('/api/question', (req, res) => {
-    const randomQuestion = interviewQuestions[Math.floor(Math.random() * interviewQuestions.length)];
+    let randomQuestion;
+    do {
+        randomQuestion = interviewQuestions[Math.floor(Math.random() * interviewQuestions.length)];
+    } while (randomQuestion === lastQuestion);
+    
+    lastQuestion = randomQuestion;
     res.json({ success: true, question: randomQuestion });
 });
 
@@ -238,8 +266,8 @@ function extractSuggestions(text) {
   if (suggestionsMatch) {
     const suggestionsText = suggestionsMatch[1];
     
-    // Split by bullet points or dashes
-    const bulletPoints = suggestionsText.split(/\s*[-•]\s*/).filter(point => point.trim());
+    // Split by bullet points or dashes, but preserve multi-line content
+    const bulletPoints = suggestionsText.split(/(?=^\s*[-•])/m).filter(point => point.trim());
     
     // Clean up each suggestion
     bulletPoints.forEach(point => {
@@ -258,9 +286,9 @@ function extractSuggestions(text) {
   // If no suggestions found in the section, try other patterns
   if (suggestions.length === 0) {
     const patterns = [
-      /- ([^\n]+)/g,
-      /• ([^\n]+)/g,
-      /\d+\. ([^\n]+)/g
+      /- ([\s\S]*?)(?=\n\s*-|\n\n|$)/g,
+      /• ([\s\S]*?)(?=\n\s*•|\n\n|$)/g,
+      /\d+\. ([\s\S]*?)(?=\n\s*\d+\.|\n\n|$)/g
     ];
     
     for (const pattern of patterns) {
